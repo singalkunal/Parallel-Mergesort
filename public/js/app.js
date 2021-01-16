@@ -5,6 +5,7 @@ const inp3 = document.querySelector('#thresh');
 
 const msg1 = document.querySelector('#message-1')
 const msg2 = document.querySelector('#message-2')
+const msg3 = document.querySelector('#message-3')
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -23,7 +24,9 @@ weatherForm.addEventListener('submit', (e) => {
                 return msg1.textContent = data.error
             }
             
-            msg1.textContent = data.output
+            msg1.textContent = data.output1;
+            msg2.textContent = data.output2;
+            msg3.textContent = data.output3;
 
             // msg2.textContent = data.forecast
             // msg2.classList.add('message')

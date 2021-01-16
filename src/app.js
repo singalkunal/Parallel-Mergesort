@@ -60,9 +60,13 @@ app.get('/sort', (req, res) => {
                 })
             }
 
-            const output = stdout;
+            stdout = stdout.split('\n');
             // console.log(stdout);
-            res.send({ output });
+            res.send({ 
+                output1: stdout[0],
+                output2: stdout[1],
+                output3: stdout[2]
+             });
 
 
         });
