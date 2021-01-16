@@ -1,0 +1,22 @@
+{
+  "name": "mergesort",
+  "version": "1.0.0",
+  "main": "index.js",
+  "gypfile": true,
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "node-addon-api": "^3.1.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "node-gyp": "^7.1.2"
+  },
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
