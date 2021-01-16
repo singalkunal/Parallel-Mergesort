@@ -20,8 +20,9 @@ weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
     msg2.classList.remove('message')
-    msg1.textContent = 'Loading...'
-    msg2.textContent = ''
+    msg1.textContent = 'Loading...';
+    msg2.textContent = '';
+    msg3.textContent = '';
 
     fetch('/sort?a=' + inp1.value + '&b=' + inp2.value + '&c=' + inp3.value + '&d=' + togbtn.checked).then((response) => {
         response.json().then((data) => {

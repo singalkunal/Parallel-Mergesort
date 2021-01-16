@@ -69,5 +69,5 @@ const generateAndSort = (arr_sz, thresh) => {
     console.log(res);
     return res;
 }
-// generateAndSort(100, 32);
+// console.log(generateAndSort(134217728, 32));
 module.exports = generateAndSort;
