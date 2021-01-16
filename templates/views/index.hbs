@@ -11,6 +11,17 @@
     <div class="main-content">
         {{>header}}
         <p>This is a sorting app.</p>
+
+        <label class="switch">
+        <input type="checkbox" id="togBtn" onclick="hideContent()">
+        <div class="slider round">
+        <!--ADDED HTML -->
+        <span class="on">CPP</span>
+        <span class="off">JS</span>
+        <!--END-->
+        </div>
+        </label>
+        
         <form >
             <input placeholder="Array Size" id="arr_sz">
             <input placeholder="Number of threads" id="num_threads">

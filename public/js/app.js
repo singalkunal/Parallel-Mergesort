@@ -6,6 +6,15 @@ const inp3 = document.querySelector('#thresh');
 const msg1 = document.querySelector('#message-1')
 const msg2 = document.querySelector('#message-2')
 const msg3 = document.querySelector('#message-3')
+const togbtn = document.querySelector('#togBtn');
+const state = 0
+
+function hideContent() {
+    if(togbtn.checked)
+        inp2.style.display = "inline-block";
+    else 
+        inp2.style.display = "none";
+}
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -14,7 +23,7 @@ weatherForm.addEventListener('submit', (e) => {
     msg1.textContent = 'Loading...'
     msg2.textContent = ''
 
-    fetch('/sort?a=' + inp1.value + '&b=' + inp2.value + '&c=' + inp3.value).then((response) => {
+    fetch('/sort?a=' + inp1.value + '&b=' + inp2.value + '&c=' + inp3.value + '&d=' + togbtn.checked).then((response) => {
         response.json().then((data) => {
             
 

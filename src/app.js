@@ -4,6 +4,7 @@ const hbs = require('hbs')
 
 const exec = require("child_process").exec;
 const fs = require('fs');
+const sortjs = require('./mergesort');
 
 /*** play with addon ***/
 // const addon = require('../build/Release/mergesort_addon.node');
@@ -43,9 +44,18 @@ app.get('/help', (req, res) => {
 
 app.get('/sort', (req, res) => {
     const query = req.query;
+    if(query.d == 'false') {
+        output = sortjs(Number(query.a), Number(query.c));
+        output = output.split('\n');
+        return res.send({
+            output1: output[0],
+            output2: output[1],
+            output3: output[2]
+        })
+    }
     finalinput = query.a + '\r\n' + query.b + '\r\n' + query.c;
 
-    console.log("Final input: ", finalinput);
+    // console.log("Final input: ", finalinput);
     fs.writeFile('./cpp/inp', finalinput, (err) => {
         if (err) {
             throw err;
@@ -56,7 +66,7 @@ app.get('/sort', (req, res) => {
             if(err) {
                 console.log(err);
                 return res.send({
-                    hlo: err
+                    otuput1: err
                 })
             }
 
